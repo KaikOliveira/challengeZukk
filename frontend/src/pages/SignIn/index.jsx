@@ -18,9 +18,9 @@ function SignIn() {
     <Wrapper>
       <ConteinerForm>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu logon</h1>
+          <h1>Faça seu login</h1>
 
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
+          <Input name="email" icon={FiMail} placeholder="Usuario" />
 
           <Input
             name="password"
@@ -30,8 +30,6 @@ function SignIn() {
           />
 
           <Button type="submit">Entrar</Button>
-
-          <a href="forgot">Esqueci minha senha</a>
         </Form>
       </ConteinerForm>
     </Wrapper>

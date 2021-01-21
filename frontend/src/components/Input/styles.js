@@ -6,13 +6,13 @@ export const Container = styled.div`
   background: #232129;
   border-radius: 10px;
   padding: 16px;
-  width: 100%;
+  width: 90%;
   border: 2px solid #232129;
   color: #666360;
   display: flex;
   align-items: center;
   & + div {
-    margin-top: 8px;
+    margin-top: 10px;
   }
   ${props =>
     props.isErrored &&
