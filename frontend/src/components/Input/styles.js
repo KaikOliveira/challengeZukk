@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components';
+import { shade } from 'polished';
 
 import Tooltip from '../Tooltip';
 
 export const Container = styled.div`
-  background: #232129;
+  background: #f4ede8;
   border-radius: 10px;
   padding: 16px;
   width: 90%;
   border: 2px solid #232129;
-  color: #666360;
+  color: #312e38;
   display: flex;
   align-items: center;
   & + div {
@@ -22,21 +23,21 @@ export const Container = styled.div`
   ${props =>
     props.isFocused &&
     css`
-      color: #ff9000;
-      border-color: #ff9000;
+      color: #0091EA;
+      border-color: #0091EA;
     `}
   ${props =>
     props.isFilled &&
     css`
-      color: #ff9000;
+      color: #0091EA;
     `}
   input {
     flex: 1;
     background: transparent;
     border: 0;
-    color: #f4ede8;
+    color: #312e38;
     &::placeholder {
-      color: #666360;
+      color: #312e38;
     }
     & + input {
       margin-top: 8px;

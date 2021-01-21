@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -12,9 +13,10 @@ export const ConteinerForm = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 0.2px solid #808080 ;
+  border: 0.2px solid ${shade(0.2, '#BEBEBE')} ;
   border-radius: 20px;
-  height: 70%;
+  background: ${shade(0.2, '#EEEEEE')};
+  height: 65%;
 
   form {
     margin: 80px 0;
@@ -28,7 +30,7 @@ export const ConteinerForm = styled.div`
     h1 {
       margin-bottom: 50px;
       font-weight: bold;
-      
+      color: #312e38;
     }
   }
 `;
