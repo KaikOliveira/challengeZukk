@@ -1,12 +1,30 @@
 import React from 'react';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { Form } from '@unform/web';
+import { FormHandles } from '@unform/core';
 
-// import { Container } from './styles';
+import { Wrapper, ConteinerForm, Input, Button } from './styles';
 
 function SignIn() {
   return (
-    <div>
-      <h1>sign in</h1>
-    </div>
+    <Wrapper>
+      <ConteinerForm>
+        <h1>Faça o Login</h1>
+        <Input
+          name="email"
+          icon={FiMail}
+          placeholder="E-mail"
+        />
+        <Input
+          name="password"
+          icon={FiLock}
+          type="password"
+          placeholder="Senha"
+        />
+
+        <Button type="submit">Entrar</Button>
+      </ConteinerForm>
+    </Wrapper>
   );
 }
 
