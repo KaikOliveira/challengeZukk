@@ -5,17 +5,20 @@ const authMiddleware = require('./Middleware');
 
 const router = express.Router();
 
-// Rota de autenticaçao
-router.post('/authenticate', (req, res) => {
-  const login = {
-    id: 1,
-    user: "admin",
-    password: 1234
-  }
+const login = {
+  user: "admin",
+  password: "1234"
+};
 
-  if (req.body.user == login.user
+router.get('/user', (req, res) => {
+  res.json(login);
+});
+
+// Rota de autenticaçao
+router.post('/logon', (req, res) => {
+  if (req.body.user === login.user
     && 
-    req.body.password == login.password) {
+    req.body.password === login.password) {
       const token = jwt.sign(login, 'PRIVATEKEY');
 
       console.log(req.body.user, req.body.password);
@@ -29,7 +32,7 @@ router.post('/authenticate', (req, res) => {
 });
 
 // Private route
-router.use(authMiddleware);
+
 
 const clientes = [
   {
@@ -77,3 +80,5 @@ const clientes = [
 router.get('/clients', async (req, res) => {
   return res.json(clientes);
 });
+
+module.exports = router;
