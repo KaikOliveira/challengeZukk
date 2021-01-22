@@ -12,26 +12,27 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 400px;
+  min-width: 250px;
+  max-width: 350px;
 
   header {
-    height: 85px;
+    height: 80px;
     width: 100%;
-    border-bottom: solid 0.5px #222;
+    border-bottom: solid 0.2px #999;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
 
     span {
-      font-size: 15px;
-      color: #666;
+      font-size: 12px;
+      color: #777;
       margin-top: 10px;
     }
 
     h2 {
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
   }
 `;

@@ -3,13 +3,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
 
-import Routes from './pages/index.jsx';
+import Routes from './pages/router.jsx';
 
 function App() {
   return(
     <Router>
-      
-        <Routes />
+      <Routes />
 
       <GlobalStyle />
     </Router>

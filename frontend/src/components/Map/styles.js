@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ContainerMap = styled.div`
-  height: 90vh;
-  width: 110%;
+  height: 90%;
+  width: 100%;
   display: flex;
 
-  background: #888;
+  background: #eee;
 
   div {
     flex: 1;
