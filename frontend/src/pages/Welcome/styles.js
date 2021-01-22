@@ -9,16 +9,26 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 
   header {
-    height: 100px;
+    height: 85px;
     width: 100%;
-    border-bottom: solid 5px #000;
-    border-color: #000;
+    border-bottom: solid 0.5px #222;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 
     span {
+      font-size: 15px;
+      color: #666;
+      margin-top: 10px;
+    }
 
+    h2 {
+      font-weight: bold;
+      margin-bottom: 5px;
     }
   }
 `;
