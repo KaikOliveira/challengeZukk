@@ -1,10 +1,8 @@
-import React, { useCallback, useRef} from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
-import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core';
-import * as Yup from 'yup';
+import React, { useState } from 'react';
+import { FiMail, FiLock } from 'react-icons/fi';
+import { useHistory } from "react-router-dom";
 
-import { useToast } from '../../hooks/toast';
+import api from '../../services/api';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -12,70 +10,55 @@ import Button from '../../components/Button';
 import { Wrapper, ConteinerForm} from './styles';
 
 function SignIn() {
-  const formRef = useRef(null);
+  const history = useHistory();
 
-  const { singIn } = useAuth();
-  const { addToast } = useToast();
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = useCallback(
-    async (data) => {
-      try {
-        formRef.current?.setErrors({});
 
-        const schema = Yup.object().shape({
-          user: Yup.string()
-            .required('Usuario Obrigatório'),
-          password: Yup.string().required('Senha Obrigatória'),
-        });
+  async function handleSubmit(event) {
+    event.preventDefault();
+    
+    if (!user || !password){
+      alert("Preencha todos os campos");
+    }else{
+      const response = await api.post('logon', { user, password });
+      const TOKEN_KEY = "token";
+      
+      const login = token => {
+        localStorage.setItem(TOKEN_KEY, token);
+      };
 
-        await schema.validate(data, {
-          abortEarly: false,
-        });
-
-        await singIn({
-          user: data.user,
-          password: data.password,
-        });
-
-        history.push('/dashboard');
-      } catch (err) {
-        if (err instanceof Yup.ValidationError) {
-          const errors = getValidationErrors(err);
-
-          formRef.current?.setErrors(errors);
-
-          return;
-        }
-
-        addToast({
-          type: 'error',
-          title: 'Erro na autenticação',
-          description:
-            'Ocorreu um erro ao fazer login, cheque as credenciaais.',
-        });
-      }
-    },
-    [addToast, history, singIn],
-  );
-
+      login(response.data.token);
+      history.push('/welcome');
+    }
+  };
 
   return (
     <Wrapper>
       <ConteinerForm>
-        <Form ref={formRef} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <h1>Faça seu login</h1>
 
-          <Input name="email" icon={FiMail} placeholder="Usuario" />
+          <Input 
+            name="user" 
+            icon={FiMail} 
+            placeholder="Usuario" 
+            value={user}
+            onChange={event => setUser(event.target.value)}
+          />
 
           <Input
             name="password"
             icon={FiLock}
             type="password"
             placeholder="Senha"
+            value={password}
+            onChange={event => setPassword(event.target.value)}
           />
 
           <Button type="submit">Entrar</Button>
-        </Form>
+        </form>
       </ConteinerForm>
     </Wrapper>
   );

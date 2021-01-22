@@ -1,9 +1,17 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Wrapper, Container } from './styles';
 
 function Welcome() {
-  return <h1>Autenticado</h1>;
+  return (
+    <Wrapper>
+      <Container>
+        <header>
+          <span>Usuario Autenticado</span>
+        </header>
+      </Container>
+    </Wrapper>
+  );
 }
 
 export default Welcome;
