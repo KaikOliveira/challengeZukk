@@ -52,6 +52,11 @@ export const List = styled.li`
   background: #fff;
   border-radius: 20px;
   border: solid 0.3px #03A9F4;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: #E1F5FE;
+  }
 `;
 
 export const Name = styled.h3`
@@ -59,6 +64,16 @@ export const Name = styled.h3`
   font-weight: bold;
 `;
 
-export const Address = styled.div``;
+export const AddressAndContact = styled.div`
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 
-export const Contact = styled.div``;
+  p {
+    font-size: 14px;
+
+    bold{
+      font-weight: 600;
+    }
+  }
+`;

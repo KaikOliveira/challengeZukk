@@ -32,6 +32,9 @@ router.post('/logon', (req, res) => {
 });
 
 // Private route
+
+//router.use(authMiddleware);
+
 const clientes = [
   {
     id: 1,
@@ -66,6 +69,26 @@ const clientes = [
   {
     id: 4,
     name: "Cliente 4",
+    endereco: "Avenida Brasil",
+    bairro: "Centro",
+    cidade: "Sao Paulo",
+    uf: "SP",
+    telefone: "(18)123456789",
+    email: "kaik.oliveiraa76@gmail.com"
+  },
+  {
+    id: 5,
+    name: "Cliente 5",
+    endereco: "Avenida Brasil",
+    bairro: "Centro",
+    cidade: "Sao Paulo",
+    uf: "SP",
+    telefone: "(18)123456789",
+    email: "kaik.oliveiraa76@gmail.com"
+  },
+  {
+    id: 6,
+    name: "Cliente 6",
     endereco: "Avenida Brasil",
     bairro: "Centro",
     cidade: "Sao Paulo",

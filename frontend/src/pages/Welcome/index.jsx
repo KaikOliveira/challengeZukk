@@ -9,8 +9,7 @@ import {
   ListClients,
   List,
   Name,
-  Address,
-  Contact
+  AddressAndContact,
 } from './styles';
 
 function Welcome() {
@@ -35,16 +34,14 @@ function Welcome() {
           {dataClient.map(client => (
             <List key={client.id}>
               <Name>{client.name}</Name>
-              <Address>
-                <p>{client.endereco}</p>
-                <p>{client.bairro}</p>
-                <p>{client.cidade}</p>
-                <p>{client.uf}</p>
-              </Address>
-              <Contact>
-                <p>{client.telefone}</p>
-                <p>{client.email}</p>
-              </Contact>
+              <AddressAndContact>
+                <p><strong>Endereço:</strong> {client.endereco}</p>
+                <p><strong>Bairro: </strong> {client.bairro}</p>
+                <p><strong>Cidade: </strong> {client.cidade}</p>
+                <p><strong>UF: </strong> {client.uf}</p>
+                <p><strong>Telefone: </strong> {client.telefone}</p>
+                <p><strong>E-mail: </strong> {client.email}</p>
+              </AddressAndContact>
             </List>
           ))}
         

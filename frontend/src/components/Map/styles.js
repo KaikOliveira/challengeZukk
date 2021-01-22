@@ -18,10 +18,8 @@ export const ContainerMap = styled.div`
     justify-content: center;
 
     a {
+      opacity: 0;
       text-decoration: none;
-      color: #666;
-      font-family: Roboto, sans-serif;
-      margin-left: 20px;
     }
   }
 `;

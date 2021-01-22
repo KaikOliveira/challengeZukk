@@ -6,13 +6,11 @@ import React, {
 
 import { Container } from './styles';
 
-
 function Input({ name, icon: Icon, ...rest }) {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
@@ -23,8 +21,6 @@ function Input({ name, icon: Icon, ...rest }) {
 
     setIsFilled(!!inputRef.current?.value);
   }, []);
-
-
 
   return (
     <Container isFilled={isFilled} isFocused={isFocused}>

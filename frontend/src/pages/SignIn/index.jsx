@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FiMail, FiLock } from 'react-icons/fi';
 import { useHistory } from "react-router-dom";
-
 import api from '../../services/api';
 
 import Input from '../../components/Input';
@@ -14,7 +13,6 @@ function SignIn() {
 
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-
 
   async function handleSubmit(event) {
     event.preventDefault();
