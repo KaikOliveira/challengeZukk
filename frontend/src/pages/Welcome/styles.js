@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100vh;
+  max-height: 1200px;
+  width: 100vw;
+  max-width: 1300px;
 
   display: flex;
   align-items: stretch;
@@ -9,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
 
   header {
     height: 85px;

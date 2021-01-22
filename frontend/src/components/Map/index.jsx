@@ -16,17 +16,6 @@ function Map(){
       zoom: 12.5
     });
 
-    map.on('mouseenter', e => {
-      if (e.features.length) {
-        map.getCanvas().style.cursor = 'pointer';
-      }
-    });
-
-
-    map.on('mouseleave', () => {
-      map.getCanvas().style.cursor = '';
-    });
-
     return () => map.remove();
   }, []); 
 
