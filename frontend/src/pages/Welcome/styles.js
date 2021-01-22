@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100vh;
-  max-height: 1200px;
   width: 100vw;
   max-width: 1300px;
-
+  background: #f5f5f5;
   display: flex;
   align-items: stretch;
 `;
@@ -26,7 +25,7 @@ export const Container = styled.div`
 
     span {
       font-size: 12px;
-      color: #777;
+      color: #01579B;
       margin-top: 10px;
     }
 
@@ -36,3 +35,30 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ListClients = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 85vh;
+  align-items: center;
+`;
+
+export const List = styled.li`
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style: none;
+  width: 90%;
+  background: #fff;
+  border-radius: 20px;
+  border: solid 0.3px #03A9F4;
+`;
+
+export const Name = styled.h3`
+  text-align: center;
+  font-weight: bold;
+`;
+
+export const Address = styled.div``;
+
+export const Contact = styled.div``;

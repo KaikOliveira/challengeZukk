@@ -32,8 +32,6 @@ router.post('/logon', (req, res) => {
 });
 
 // Private route
-
-
 const clientes = [
   {
     id: 1,

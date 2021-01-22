@@ -21,6 +21,7 @@ export const ContainerMap = styled.div`
       text-decoration: none;
       color: #666;
       font-family: Roboto, sans-serif;
+      margin-left: 20px;
     }
   }
 `;
